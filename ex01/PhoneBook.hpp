@@ -6,7 +6,7 @@
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:59:39 by louka             #+#    #+#             */
-/*   Updated: 2026/06/09 14:31:35 by louka            ###   ########.fr       */
+/*   Updated: 2026/06/09 15:41:19 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "contact.hpp"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 class PhoneBook {
 private:
