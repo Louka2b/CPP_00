@@ -6,18 +6,18 @@
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:59:39 by louka             #+#    #+#             */
-/*   Updated: 2026/06/09 15:41:19 by louka            ###   ########.fr       */
+/*   Updated: 2026/06/09 15:53:26 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-
+#include <string>
 class PhoneBook {
 private:
     Contact _contacts[8];
