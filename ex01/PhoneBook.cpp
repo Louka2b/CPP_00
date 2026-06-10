@@ -6,13 +6,13 @@
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:47:45 by louka             #+#    #+#             */
-/*   Updated: 2026/06/10 11:11:10 by louka            ###   ########.fr       */
+/*   Updated: 2026/06/10 14:56:48 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook(void)
 {
     _count = 0;
     _current_index = 0;
@@ -22,7 +22,7 @@ PhoneBook::~PhoneBook()
 {
 }
 
-void print_name(std::string tmp)
+static void print_name(std::string tmp)
 {
     std::string space = "                                            ";
     if(tmp.size() > 10)
@@ -89,15 +89,38 @@ void PhoneBook::add_contact()
     std::string ln;
     std::string nm;
     std::string num;
-
     std::cout << "ENTER FIRST NAME" << '\n';
-    if (!std::getline(std::cin, fn)) return;
+    if (!std::getline(std::cin, fn)) 
+        return;
+    if(fn.size() == 0)
+    {
+        std::cout << "a field canot be empty" << '\n';
+        return;
+    }
     std::cout << "ENTER LAST NAME" << '\n';
-    if (!std::getline(std::cin, ln)) return;
+    if (!std::getline(std::cin, ln)) 
+        return;
+    if(ln.size() == 0)
+    {
+        std::cout << "a field canot be empty" << '\n';
+        return;
+    }
     std::cout << "ENTER NICKNAME" << '\n';
-    if (!std::getline(std::cin, nm)) return;
+    if (!std::getline(std::cin, nm)) 
+        return;
+    if(nm.size() == 0)
+    {
+        std::cout << "a field canot be empty" << '\n';
+        return;
+    }
     std::cout << "ENTER NUMBER" << '\n';
-    if (!std::getline(std::cin, num)) return;
+    if (!std::getline(std::cin, num)) 
+        return;
+    if(num.size() == 0)
+    {
+        std::cout << "a field canot be empty" << '\n';
+        return;
+    }
     _contacts[_current_index].set_info(fn, ln, nm, num);
     if (_count < 8)
         _count++;    
@@ -110,6 +133,7 @@ int main(void)
 {
     PhoneBook phonebook;
     std::string line = "";
+    std::cout << "type a command (ADD, SEARCH, EXIT)" << '\n';
     while(1)
     {
         if (!std::getline(std::cin, line))
@@ -120,5 +144,6 @@ int main(void)
             phonebook.search_contact();
         if(line == "ADD")
             phonebook.add_contact();
+        std::cout << "type a command (ADD, SEARCH, EXIT)" << '\n';
     }
 }
