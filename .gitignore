@@ -3,3 +3,10 @@ a.out
 */megaphone
 */*.o
 */PhoneBook
+*/account
+*/*.log
+*/*.txt
+*/*.pdf
+*.pdf
+*.txt
+*.log

@@ -6,7 +6,7 @@
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:47:45 by louka             #+#    #+#             */
-/*   Updated: 2026/06/09 15:41:14 by louka            ###   ########.fr       */
+/*   Updated: 2026/06/10 11:11:10 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void PhoneBook::search_contact()
         std::cout << "ERROR BAD ID" << '\n';
         return;
     }
-    
     std::cout << "First Name: " << _contacts[nbr].get_first_name() << '\n';
     std::cout << "Last Name: " << _contacts[nbr].get_last_name() << '\n';
     std::cout << "Nickname: " << _contacts[nbr].get_nickname() << '\n';
