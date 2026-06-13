@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldeplace <ldeplace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:47:45 by louka             #+#    #+#             */
-/*   Updated: 2026/06/10 14:56:48 by louka            ###   ########.fr       */
+/*   Updated: 2026/06/13 13:34:41 by ldeplace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void PhoneBook::search_contact()
     std::cout << "Last Name: " << _contacts[nbr].get_last_name() << '\n';
     std::cout << "Nickname: " << _contacts[nbr].get_nickname() << '\n';
     std::cout << "Phone Number: " << _contacts[nbr].get_phone_number() << '\n';
+    std::cout << "Darkest secret: " << _contacts[nbr].get_darkest_secret() << '\n';
 }
 
 void PhoneBook::add_contact()
@@ -89,6 +90,7 @@ void PhoneBook::add_contact()
     std::string ln;
     std::string nm;
     std::string num;
+    std::string sc;
     std::cout << "ENTER FIRST NAME" << '\n';
     if (!std::getline(std::cin, fn)) 
         return;
@@ -121,7 +123,15 @@ void PhoneBook::add_contact()
         std::cout << "a field canot be empty" << '\n';
         return;
     }
-    _contacts[_current_index].set_info(fn, ln, nm, num);
+        std::cout << "ENTER DARKEST SECRET" << '\n';
+    if (!std::getline(std::cin, sc)) 
+        return;
+    if(sc.size() == 0)
+    {
+        std::cout << "a field canot be empty" << '\n';
+        return;
+    }
+    _contacts[_current_index].set_info(fn, ln, nm, num, sc);
     if (_count < 8)
         _count++;    
     _current_index++;
